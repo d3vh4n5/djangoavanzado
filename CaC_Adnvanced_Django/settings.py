@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'miproyecto',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,9 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            'E:/repositorios/django2/CaC_Adnvanced_Django/miproyecto/templates',
+           # BASE_DIR / 'miproyecto/templates',
+            BASE_DIR / 'templates', # Esta es una buena práctica
+           # 'E:/repositorios/django2/CaC_Adnvanced_Django/miproyecto/templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {

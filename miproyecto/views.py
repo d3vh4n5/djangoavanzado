@@ -1,17 +1,32 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
-from django.urls import reverse
-from django.shortcuts import render, redirect
+# from django.http import HttpResponse, HttpResponseRedirect
+# from django.urls import reverse
+# from django.template import loader
+#from django.shortcuts import render, redirect
 
+
+
+
+# def index(request):
+#     template = loader.get_template('index.html')
+#     context = {'algo' : 'soy un contexto loco', 'titulo' : 'Modo 3'}
+#     return HttpResponse(template.render(context, request))
 
 def index(request):
-    if (request.method == 'GET'):
-        titulo = 'Titulo cuando accedo por get'
-    else:
-        titulo = f'Titulo cuando accedo por otro metodo'
-    parameters_get = request.GET.get('algo')
-    # return HttpResponse('Hola loco')
-    return  render(request, 'index.html', {'titulo' : titulo, 'parametro' : parameters_get})
+    contexto = {'algo' : 'soy un contexto loco', 'titulo' : 'Modo 4'}
+    return render(request, "miproyecto/index.html", contexto)
+
+
+
+
+# def index(request):
+#     if (request.method == 'GET'):
+#         titulo = 'Titulo cuando accedo por get'
+#     else:
+#         titulo = f'Titulo cuando accedo por otro metodo'
+#     parameters_get = request.GET.get('algo')
+#     # return HttpResponse('Hola loco')
+#     return  render(request, 'index.html', {'titulo' : titulo, 'parametro' : parameters_get})
 
 def ver_proyectos(request, anio, mes):
     return HttpResponse(f"""
