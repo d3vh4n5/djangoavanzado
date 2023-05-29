@@ -56,9 +56,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-           # BASE_DIR / 'miproyecto/templates',
             BASE_DIR / 'templates', # Esta es una buena práctica
-           # 'E:/repositorios/django2/CaC_Adnvanced_Django/miproyecto/templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -128,3 +126,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import os
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
